@@ -2,3 +2,4 @@ include LICENSE *.md
 graft wagtailcommonmark
 global-exclude __pycache__
 global-exclude *.py[co]
+global-exclude .DS_Store
