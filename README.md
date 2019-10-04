@@ -9,6 +9,7 @@ Specifically, it provides:
 * A `wagtailcommonmark.blocks.CommonMarkBlock` for use in streamfields.
 * A `wagtailcommonmark.fields.CommonMarkField` for use in page models.
 * A `wagtailcommonmark.edit_handlers.CommonMarkPanel` for use in the editor interface.
+* A `wagtailcommonmark.jinja2tags.commonmark` extension for use in jinja2 templates.
 * A `commonmark` template tag.
 
 ### Installation
