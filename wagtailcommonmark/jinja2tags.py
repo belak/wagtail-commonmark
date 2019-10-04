@@ -1,6 +1,6 @@
 from jinja2.ext import Extension
 
-from .templatetags.wagtailcommonmark import commonmark
+from .templatetags.wagtailcommonmark import commonmark as commonmark_filter
 
 
 class CommonMarkExtension(Extension):
@@ -8,7 +8,7 @@ class CommonMarkExtension(Extension):
         super().__init__(environment)
 
         self.environment.filters.update({
-            'commonmark': commonmark,
+            'commonmark': commonmark_filter,
         })
 
 
