@@ -1,25 +1,15 @@
 from setuptools import setup, find_packages
-import subprocess
 
-
-def get_git_revision_hash():
-    try:
-        git_hash = subprocess.check_output(['git', 'rev-parse', 'HEAD'])
-    except subprocess.CalledProcessError:
-        return 'master'
-    else:
-        return git_hash.decode('ascii').splitlines()[0]
-
-
-README = 'https://github.com/belak/wagtail-commonmark/blob/{hash}/README.md'
-README = README.format(
-    hash=get_git_revision_hash()
-)
+from os import path
+README_PATH = path.join(path.abspath(path.dirname(__file__)), 'README.md')
+with open(README_PATH, encoding='utf-8') as f:
+    long_description = f.read()
 
 
 INSTALL_REQUIRES = [
-    'bleach>=1.4.2,<2.2',
-    'Wagtail>=2.0',
+    'bleach>=3.0,<4.0',
+    'commonmark>=0.8,<0.10'
+    'Wagtail>=2.0,<3.0',
 ]
 
 
@@ -38,15 +28,15 @@ CLASSIFIERS = [
 
 setup(
     name='wagtail-commonmark',
-    version='0.1',
+    version='0.1.1',
     description='Commonmark support for Wagtail',
-    long_description="Provides CommonMark page field and streamfield block for "
-                     "Wagtail. More info: {}".format(README),
+    long_description=long_description,
+    long_description_content_type='text/markdown',
     author='Kaleb Elwert',
     author_email='belak@coded.io',
-    url='https://github.com/torchbox/wagtail-markdown',
+    url='https://github.com/belak/wagtail-commonmark',
     install_requires=INSTALL_REQUIRES,
-    license='zlib',
+    license='MIT',
     packages=find_packages(),
     include_package_data=True,
     classifiers=CLASSIFIERS,
