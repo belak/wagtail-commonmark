@@ -1,6 +1,7 @@
 const defaultCodeMirrorConfig = {
   gutter: true,
   lineNumbers: true,
+  lineWrapping: true,
   theme: "default",
   mode: "markdown",
   viewportMargin: Infinity,

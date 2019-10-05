@@ -28,7 +28,7 @@ CLASSIFIERS = [
 
 setup(
     name='wagtail-commonmark',
-    version='0.2.1',
+    version='0.2.2',
     description='Commonmark support for Wagtail',
     long_description=long_description,
     long_description_content_type='text/markdown',
